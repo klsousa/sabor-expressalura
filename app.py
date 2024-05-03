@@ -1,4 +1,6 @@
-print("""""
+import os
+def exibir_nome_do_programa(): 
+    print("""""
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
 ██╔════╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗  ██╔════╝╚██╗██╔╝██╔══██╗██╔══██╗██╔════╝██╔════╝██╔════╝
 ╚█████╗░███████║██████╦╝██║░░██║██████╔╝  █████╗░░░╚███╔╝░██████╔╝██████╔╝█████╗░░╚█████╗░╚█████╗░
@@ -7,13 +9,39 @@ print("""""
 ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░
 """)
 
-print('1. Cadastrar restaurante')
-print('2. Listar restaurante')
-print('3. Ativar restaurante')
-print('4. Sair\n')
+""" def exibir_opcoes():
+    print('1. Cadastrar restaurante')
+    print('2. Listar restaurante')
+    print('3. Ativar restaurante')
+    print('4. Sair\n')
 
-opcao_escolhida =  input('Escolha uma opção: ')
-print(f'Voce escolheu a opção: {opcao_escolhida}')
+def main():
+    exibir_nome_do_programa()
+    exibir_opcoes()
+    escolher_opcao()
+
+def finalizar_app():
+    os.system('cls')
+    print('Finalizando o app\n')  
+
+def escolher_opcao():
+
+    opcao_escolhida =  int (input('Escolha uma opção: '))
+    #opcao_escolhida = int(opcao_escolhida)
+
+    
+    if opcao_escolhida == 1:
+        print('Cadastrar restaurante')
+    elif opcao_escolhida == 2:
+        print('Listar restaurante')
+    elif opcao_escolhida == 3:
+        print('3. Ativar restaurante')
+    else:
+        finalizar_app()
+
+if __name__ == '__main__':
+    main()
+ """
 
 
 
@@ -22,19 +50,24 @@ print(f'Voce escolheu a opção: {opcao_escolhida}')
 
 
 
+def configurar_tempo_foco():
+    tempo = int(input("Digite o tempo de foco (25-45 min): "))
+    if tempo < 25:
+        print("Valor muito baixo. Configure um tempo maior ou igual a 25 minutos.")
+    elif tempo > 45:
+        print("Valor muito alto. Configure um tempo menor ou igual a 45 minutos.")
+    else:
+        print("Tempo configurado para", tempo, "minutos.")
 
 
 
+""" #APRENDIZADO
 
+#Verificar o que esta retornando
+print(type(opcao_escolhida))
+print(type(1))
 
-
-
-
-
-
-
-#APRENDIZADO
-""" print('Python na Escola de Programação da Alura')
+print('Python na Escola de Programação da Alura')
 nome = 'Kelvin'
 idade = 23
 print(f'Meu nome e {nome} e tenho {idade} anos')
