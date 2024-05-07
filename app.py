@@ -1,4 +1,7 @@
 import os
+
+restaurantes = []
+
 def exibir_nome_do_programa(): 
     print("""""
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
@@ -9,39 +12,58 @@ def exibir_nome_do_programa():
 ╚═════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝  ╚══════╝╚═╝░░╚═╝╚═╝░░░░░╚═╝░░╚═╝╚══════╝╚═════╝░╚═════╝░
 """)
 
-""" def exibir_opcoes():
+def exibir_opcoes():
     print('1. Cadastrar restaurante')
-    print('2. Listar restaurante')
+    print('2. Listar restaurante') 
     print('3. Ativar restaurante')
     print('4. Sair\n')
 
 def main():
+    os.system('cls')
     exibir_nome_do_programa()
     exibir_opcoes()
     escolher_opcao()
 
 def finalizar_app():
     os.system('cls')
-    print('Finalizando o app\n')  
+    print('Finalizando o app\n') 
+
+def opcao_invalida():
+    print('Opção invalida!\n')
+    input('Digite uma tecla para voltar ao menu principal')
+    main() 
+
+def cadastrar_novo_restaurante():
+    os.system('cls')
+    print('Cadastro de novos restaurantes\n')
+    nome_do_restaurante = input('Digite o nome do restaurante que deseja cadastrar: ')
+    restaurantes.append(nome_do_restaurante)
+    print(f'O restaurante{nome_do_restaurante} foi cadastrado com sucesso!')
+    input('Digite uma tecla para voltar ao menu principal')
+    main()
+
 
 def escolher_opcao():
-
-    opcao_escolhida =  int (input('Escolha uma opção: '))
-    #opcao_escolhida = int(opcao_escolhida)
-
-    
-    if opcao_escolhida == 1:
-        print('Cadastrar restaurante')
-    elif opcao_escolhida == 2:
-        print('Listar restaurante')
-    elif opcao_escolhida == 3:
-        print('3. Ativar restaurante')
-    else:
-        finalizar_app()
+    try:
+        opcao_escolhida =  int (input('Escolha uma opção: '))
+        #opcao_escolhida = int(opcao_escolhida)
+        
+        if opcao_escolhida == 1:
+            cadastrar_novo_restaurante()
+            print('Cadastrar restaurante')
+        elif opcao_escolhida == 2:
+            print('Listar restaurante')
+        elif opcao_escolhida == 3:
+            print('3. Ativar restaurante')
+        elif opcao_escolhida == 4:
+            finalizar_app()
+        else:
+            opcao_invalida()
+    except:
+        opcao_invalida()
 
 if __name__ == '__main__':
     main()
- """
 
 
 
@@ -50,14 +72,8 @@ if __name__ == '__main__':
 
 
 
-def configurar_tempo_foco():
-    tempo = int(input("Digite o tempo de foco (25-45 min): "))
-    if tempo < 25:
-        print("Valor muito baixo. Configure um tempo maior ou igual a 25 minutos.")
-    elif tempo > 45:
-        print("Valor muito alto. Configure um tempo menor ou igual a 45 minutos.")
-    else:
-        print("Tempo configurado para", tempo, "minutos.")
+
+
 
 
 
