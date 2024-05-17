@@ -20,4 +20,4 @@ frase = "Python se tornou uma das linguagens de programação mais populares do 
 contagem_palavras = {}
 palavras = frase.split()
 for palavra in palavras:
-    contagem_palavras[palavra]
+    contagem_palavras[palavra] = contagem_palavras
