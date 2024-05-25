@@ -34,13 +34,14 @@ class Restaurante:
         self._ativo = not self._ativo
     
     def receber_avaliacao(self, cliente, nota):
-        avaliacao = Avaliacao(cliente, nota)
-        self._avaliacao.append(avaliacao)
+        if 0 < nota <= 5:   
+            avaliacao = Avaliacao(cliente, nota)
+            self._avaliacao.append(avaliacao)
 
     @property #Para ler as informações
     def media_avaliacoes(self):
         if not self._avaliacao:
-            return 0
+            return '-'
         #Vamos passar soma_das_notas e usar um operador do Python chamado sum() para realizar essa soma. Todas as notas estão em Avaliacao e contém ._nota ("ponto", "underline", "nota").
         #Então, de alguma forma, teríamos que acessar essa informação. Portanto, vamos informar que desejamos pegar todas as avaliações e, para cada avaliação, a única informação que queremos é a nota, que deve ser somada: soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao).
         soma_das_notas = sum(avaliacao._nota for avaliacao in self._avaliacao)
